@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script lang="java">
+        $(function () {
+            $(".menu li:nth-child(3)").css({
+                "background": "pink"
+            }); //nth-child(n) 1부터 순번 시작
+
+            $(".menu").children("li").eq(4).css({
+                "background": "green",
+                "color": "white",
+                "font-size": "30px"
+            }); //children 직계자식
+            //eq(n) 0부터 순번 시작
+
+            $("li").parent(".menu").css({
+                "border": "10px solid deeppink"
+            }); //parent 부모
+
+            $(".list01_child").parents(".menu").css({
+                "background" : "#444"
+            }); //parents 부모포함 조상
+
+            $(".list04").siblings().css({
+                "color" : " red"
+            }); //siblings 형제자매
+
+            $(".menu").find("div").css({
+                "font-size" : "20px", "font-weight" : "600", "color" : "blue"
+            }) //find 후손까지
+
+            $(".list04").prev().css({
+                "border" : "5px solid green"
+            }); //prev 앞tag
+
+            $(".list04").next().css({
+                "border" : "3px solid skyblue"
+            }); //next 뒷tag
+
+        }) //jQuery end
+    </script>
+
+    <style type="text/css">
+
+
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <li>list01
+            <div class="list01_child">list01-1-1-1</div>
+        </li>
+        <li>list02</li>
+        <li>list03</li>
+        <li class="list04">list04</li>
+        <li>list05</li>
+        <li>list06
+            <div class="list01_child">list01-1-1-1</div>
+        </li>
+        <li>list07</li>
+        <li>list08</li>
+    </ul>
+</body>
+
+</html>
